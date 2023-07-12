@@ -1,11 +1,12 @@
 import React,{Component} from 'react'
-import ReactGA from "react-ga";
+// import ReactGA from "react-ga";
+import ReactGA from "react-ga4";
 
 class App extends Component {
 
   componentDidMount(){
-    // ReactGA.initialize("your GA measurement id");
-    ReactGA.initialize("UA-277395046-1");
+    ReactGA.initialize("G-KHQDLL6J28");
+    // ReactGA.initialize("UA-277395046-1");
   }
 
   eventTrack = (category,action,label) =>{
