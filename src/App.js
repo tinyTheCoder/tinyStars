@@ -5,7 +5,7 @@ class App extends Component {
 
   componentDidMount(){
     // ReactGA.initialize("your GA measurement id");
-    ReactGA.initialize("G-R8THYHG60B");
+    ReactGA.initialize("UA-277395046-1");
   }
 
   eventTrack = (category,action,label) =>{
