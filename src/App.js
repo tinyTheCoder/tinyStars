@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 // import ReactGA from "react-ga";
 import ReactGA from "react-ga4";
-// const ec = ReactGA.plugin.require("ecommerce");
+
 
 class App extends Component {
 
@@ -19,15 +19,17 @@ class App extends Component {
     })
   }
 
-//   addItem=()=>{
-//   ec.plugin.execute("ecommerce", "addItem", {
-//     id: "user123",
-//     name: "Product Name",
-//     price: "10.00",
-//     category: "Food",
-//     quantity: "1"
-// });
-//   }
+  addItem=()=>{
+    ReactGA.plugin.require("ec",{path:'/log',debug:true});
+    const ga = ReactGA.ga;
+  ga("ec: addItem", {
+    id: "user123",
+    name: "Product Name",
+    price: "10.00",
+    category: "Food",
+    quantity: "1"
+});
+  }
 
   render(){
      return (
