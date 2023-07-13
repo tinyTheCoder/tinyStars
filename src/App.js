@@ -25,7 +25,7 @@ class App extends Component {
      return (
       <>
           <h1>Google Alaytics 4</h1>
-          <button onClick={()=>this.eventTrack("Main Page","Track Me Button","Button")} >TRACK ME</button>
+          <button onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button>
           <button onClick={()=>toTrackMonitization('addToCart')}>ADD TO CART</button>
       </>
    
