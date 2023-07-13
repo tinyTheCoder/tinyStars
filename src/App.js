@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 // import ReactGA from "react-ga";
 import ReactGA from "react-ga4";
-const ec = ReactGA.plugin.require("ecommerce");
+// const ec = ReactGA.plugin.require("ecommerce");
 
 class App extends Component {
 
@@ -19,22 +19,22 @@ class App extends Component {
     })
   }
 
-  addItem=()=>{
-  ec.plugin.execute("ecommerce", "addItem", {
-    id: "user123",
-    name: "Product Name",
-    price: "10.00",
-    category: "Food",
-    quantity: "1"
-});
-  }
+//   addItem=()=>{
+//   ec.plugin.execute("ecommerce", "addItem", {
+//     id: "user123",
+//     name: "Product Name",
+//     price: "10.00",
+//     category: "Food",
+//     quantity: "1"
+// });
+//   }
 
   render(){
      return (
       <>
           <h1>Google Alaytics 4</h1>
           <button onClick={()=>this.eventTrack("Main Page","Track Me Button","Button")} >TRACK ME</button>
-          <button onClick={()=>this.addItem()}>ADD TO CART</button>
+          {/* <button onClick={()=>this.addItem()}>ADD TO CART</button> */}
       </>
    
   )
