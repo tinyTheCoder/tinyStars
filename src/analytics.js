@@ -13,8 +13,7 @@ function toTrackMonitization(event){
   ReactGA.plugin.require('ec', { path: '/log', debug: true });
   const ga = ReactGA.ga
 
-  switch(event){
-    case 'addToCart' : 
+  if(event === 'addToCart'){
     console.log('add to cart ')
     ga("ec:addItem",{
       id: "user123",
