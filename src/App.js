@@ -18,6 +18,11 @@ class App extends Component {
 
   ga4MonitizationTrack = () =>{
     console.log('montization track for addToCart')
+
+    gtag('set', {'dimension2': 'web'})
+    gtag('set', {'dimension3': 'english'})
+
+
     const id = 1024
     const dollar_currency = "USD"
     gtag("event","add_to_cart",{
