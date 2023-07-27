@@ -26,7 +26,7 @@ class App extends Component {
     if (navigator.appVersion.indexOf("X11")!==-1) OSName="UNIX";
     if (navigator.appVersion.indexOf("Linux")!==-1) OSName="Linux";
 
-    console.log('Your OS: '+OSName);
+    // console.log('Your OS: '+OSName);
     this.setState({
       OSName : OSName
     })
@@ -39,11 +39,13 @@ class App extends Component {
   }
 
   ga4MonitizationTrack = () =>{
+
+    this.toDetectPlatform()
     console.log('montization track for addToCart')
 
     console.log('os name',this.state.OSName)
 
-    gtag('set', 'dimension2',{'source': `${this.state.OSName}`})
+    gtag('set', 'dimension2',{'source': 'web'})
     gtag('set', 'dimension3',{'language': 'english'})
 
 
