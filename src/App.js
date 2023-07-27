@@ -108,7 +108,7 @@ class App extends Component {
       <>
           <h1>Google Alaytics 4</h1>
           <div className='allButtons'>
-          <button onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button>
+          <button className='tracking' id='t' onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button>
           {/* <button onClick={()=>toTrackMonitization('addToCart')}>ADD TO CART</button> */}
           <button className='addtocart' id="a" onClick={()=>this.ga4MonitizationTrack()}>ADD TO CART</button>
 
