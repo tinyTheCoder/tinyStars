@@ -6,21 +6,47 @@ import { gtag, install } from 'ga-gtag';
 
 class App extends Component {
 
+  constructor(){
+    super();
+    this.state = {
+      OSName : 'unknown OS '
+    }
+  }
+
   componentDidMount(){
     ReactGA.initialize("G-KHQDLL6J28");
     install('G-KHQDLL6J28'); 
     // ReactGA.initialize("UA-277395046-1");
   }
 
+  toDetectPlatform = () =>{
+    var OSName="Unknown OS";
+    if (navigator.appVersion.indexOf("Win")!==-1) OSName="Windows";
+    if (navigator.appVersion.indexOf("Mac")!==-1) OSName="MacOS";
+    if (navigator.appVersion.indexOf("X11")!==-1) OSName="UNIX";
+    if (navigator.appVersion.indexOf("Linux")!==-1) OSName="Linux";
+
+    console.log('Your OS: '+OSName);
+    this.setState({
+      OSName : OSName
+    })
+  }
+
   customDimensions = () =>{
-    gtag('set', {'dimension1': 'userId'})
+    let userId = 'm a user'
+    gtag('set', 'dimension1', { 'userId': `${userId}` });
+    // gtag('set', {'dimension1': 'userId'})
   }
 
   ga4MonitizationTrack = () =>{
     console.log('montization track for addToCart')
 
-    gtag('set', {'dimension2': 'web'})
-    gtag('set', {'dimension3': 'english'})
+    console.log('os name',this.state.OSName)
+
+    gtag('set', 'dimension2',{'source': `${this.state.OSName}`})
+    gtag('set', 'dimension3',{'language': 'english'})
+
+
 
 
     const id = 1024
