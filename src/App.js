@@ -81,6 +81,7 @@ class App extends Component {
     const id = 1024
     const dollar_currency = "USD"
     gtag("event","purchase",{
+      transaction_id: "T_12345",
       tax:34.85,
       currency: `${dollar_currency}`,
       items:[
@@ -133,9 +134,12 @@ class App extends Component {
       ]
     })
 
+    let product_ar_title = 'arabic babe'
+
     gtag('event', 'click', { 
       'event_category': 'Product' ,
-      'non_interaction': true
+      'non_interaction': true,
+      'event_label':product_ar_title
     });    
 
   }
