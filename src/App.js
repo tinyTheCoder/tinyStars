@@ -61,7 +61,8 @@ class App extends Component {
           item_id : `${id}`,
           item_name:"my first product - babe",
           price:106,
-          quantity:1
+          quantity:1,
+          position:'order'
         }
       ]
     })
