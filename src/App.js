@@ -116,6 +116,30 @@ class App extends Component {
     gtag('event', 'loginEvent', { 'method': 'Google' });
   }
 
+  removeFromCart = () =>{
+    console.log('montization track for remove from cart')
+
+    const id = 1024
+    const dollar_currency = "USD"
+    gtag("event","remove_from_cart",{
+      currency: `${dollar_currency}`,
+      items:[
+        {
+          item_id : `${id}`,
+          item_name:"my first product - babe",
+          price:10,
+          quantity:1
+        }
+      ]
+    })
+
+    gtag('event', 'click', { 
+      'event_category': 'Product' ,
+      'non_interaction': true
+    });    
+
+  }
+
   render(){
      return (
       <>
@@ -131,6 +155,8 @@ class App extends Component {
 
 
           <button className='purchase' id='d' onClick={()=>this.ga4MonitizationTrackPurchase()}>PURCHASE</button>
+
+          <button className='removeFromeCart' id='r' onClick={()=>this.removeFromCart()}>REMOVE FROM CART</button>
       </div>
       </>
    
