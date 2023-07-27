@@ -171,24 +171,74 @@ class App extends Component {
 
   }
 
+  viewProducts = () =>{
+    
+    const id = 1024
+    gtag("event","view_item",{
+      currency: "USD",
+      value:7,
+      items:[
+        {
+          item_id : `${id}`,
+          item_name:"my first product - babe",
+          price:106,
+          quantity:1,
+          position:'order'
+        }
+      ]
+    })
+
+    gtag('event', 'click', { 
+      'event_category': 'Product' ,
+      'event_label':'view product'    
+    });
+  }
+
+  beginCheckout = () =>{
+    
+    const id = 1024
+    gtag("event","begin_checkout",{
+      currency: "USD",
+      value:7,
+      items:[
+        {
+          item_id : `${id}`,
+          item_name:"my first product - babe",
+          price:106,
+          quantity:1,
+          position:'order'
+        }
+      ]
+    })
+
+    gtag('event', 'click', { 
+      'event_category': 'Product' ,
+      'event_label':'view product'    
+    });
+  }  
+
   render(){
      return (
       <>
-          <h1>Google Alaytics 4</h1>
+          <h1 className='tittle' >Google Alaytics 4</h1>
           <div className='allButtons'>
           {/* <button className='tracking' id='t' onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button> */}
           {/* <button onClick={()=>toTrackMonitization('addToCart')}>ADD TO CART</button> */}
-          <button className='addtocart' id="a" onClick={()=>this.ga4MonitizationTrack()}>ADD TO CART</button>
 
           <button className='loginEvent'id="b" onClick={()=>this.loginEvent()} >LOGIN ME</button>
+          <button className='viewProduct'id="v_p" onClick={()=>this.viewProducts()} >View PRODUCTS</button>
 
-          <button className='customDimensions' id='c' onClick={()=>this.customDimensions()}>Custom dimension</button>
+
+          <button className='addtocart' id="a" onClick={()=>this.ga4MonitizationTrack()}>ADD TO CART 😍</button>
+          <button className='beginCheckout' id="b_c" onClick={()=>this.beginCheckout()}>BEGIN CHECKOUT</button>
+
 
 
           <button className='purchase' id='d' onClick={()=>this.ga4MonitizationTrackPurchase()}>PURCHASE</button>
-          <button className='purchasetwo' id='d' onClick={()=>this.ga4MonitizationTrackPurchase2ndProduct()}>NEW PURCHASE OF 2nd PRODUCT</button>
+          <button className='purchasetwo' id='d' onClick={()=>this.ga4MonitizationTrackPurchase2ndProduct()}>PURCHASE 2nd PRODUCT</button>
 
           <button className='removeFromeCart' id='r' onClick={()=>this.removeFromCart()}>REMOVE FROM CART</button>
+          <button className='customDimensions' id='c' onClick={()=>this.customDimensions()}>Custom dimension</button>
       </div>
       </>
    

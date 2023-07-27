@@ -1,6 +1,9 @@
 .addtocart{
-  background-color: red;
-    border-bottom: 6px solid black;
+  padding: 1em !important;
+  /* background-color: red; */
+
+  background-color: #f95ef0;
+    /* border-bottom: 6px solid black; */
 }
 
 
@@ -16,4 +19,43 @@
   gap: 26px !important;
   align-items: center;
   justify-content: center;
+}
+
+.loginEvent{
+  padding: 1em !important;
+  background: orange;
+}
+
+.viewProduct{
+  padding: 1em !important;
+  background: yellow;
+}
+
+.beginCheckout{
+  background: #86ff86;
+  padding: 1em !important;
+}
+
+.removeFromeCart{
+  background: red;
+  padding: 1em !important;
+  color:white;
+}
+
+.purchasetwo{
+  background: rgb(14, 100, 14);
+  padding: 1em !important;
+  color:white;
+}
+
+.customDimensions{
+  background: #ffffaf;
+}
+
+.tittle{
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em !important;
+    font-family: monospace;
 }
