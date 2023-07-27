@@ -16,7 +16,6 @@ class App extends Component {
   componentDidMount(){
     ReactGA.initialize("G-KHQDLL6J28");
     install('G-KHQDLL6J28'); 
-    gtag('config', 'G-KHQDLL6J28',{ 'debug_mode': true });
     // ReactGA.initialize("UA-277395046-1");
   }
 
@@ -115,6 +114,7 @@ class App extends Component {
 
   
   loginEvent = () =>{
+    gtag('config', 'G-KHQDLL6J28',{ 'debug_mode': true });
     gtag('event', 'loginEvent', { 'method': 'Google' });
   }
 
@@ -145,6 +145,32 @@ class App extends Component {
 
   }
 
+  ga4MonitizationTrackPurchase2ndProduct = ()  =>{
+    console.log('montization track for purchase 2nd product')
+
+    const id = 1025
+    const dollar_currency = "USD"
+    gtag("event","purchase",{
+      transaction_id: "T_12345",
+      tax:0.25,
+      currency: `${dollar_currency}`,
+      items:[
+        {
+          item_id : `${id}`,
+          item_name:"my second product - baby",
+          price:1000,
+          quantity:1
+        }
+      ]
+    })
+
+    gtag('event', 'click', { 
+      'event_category': 'Product 2' ,
+      'event_label':'purchase'    
+    });
+
+  }
+
   render(){
      return (
       <>
@@ -160,6 +186,7 @@ class App extends Component {
 
 
           <button className='purchase' id='d' onClick={()=>this.ga4MonitizationTrackPurchase()}>PURCHASE</button>
+          <button className='purchasetwo' id='d' onClick={()=>this.ga4MonitizationTrackPurchase2ndProduct()}>NEW PURCHASE OF 2nd PRODUCT</button>
 
           <button className='removeFromeCart' id='r' onClick={()=>this.removeFromCart()}>REMOVE FROM CART</button>
       </div>
