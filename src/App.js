@@ -110,14 +110,14 @@ class App extends Component {
           <div className='allButtons'>
           <button onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button>
           {/* <button onClick={()=>toTrackMonitization('addToCart')}>ADD TO CART</button> */}
-          <button className='addtocart' onClick={()=>this.ga4MonitizationTrack()}>ADD TO CART</button>
+          <button className='addtocart' id="a" onClick={()=>this.ga4MonitizationTrack()}>ADD TO CART</button>
 
-          <button onClick={()=>this.loginEvent()} >LOGIN ME</button>
+          <button className='loginEvent'id="b" onClick={()=>this.loginEvent()} >LOGIN ME</button>
 
-          <button onClick={()=>this.customDimensions()}>Custom dimension</button>
+          <button className='customDimensions' id='c' onClick={()=>this.customDimensions()}>Custom dimension</button>
 
 
-          <button className='purchase' onClick={()=>this.ga4MonitizationTrackPurchase()}>PURCHASE</button>
+          <button className='purchase' id='d' onClick={()=>this.ga4MonitizationTrackPurchase()}>PURCHASE</button>
       </div>
       </>
    
