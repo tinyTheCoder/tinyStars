@@ -66,6 +66,12 @@ class App extends Component {
         }
       ]
     })
+
+    gtag('event', 'click', { 
+      'event_category': 'Product' ,
+      'event_label':'addToCart'    
+    });
+
   }
 
 
@@ -88,8 +94,8 @@ class App extends Component {
     })
 
     gtag('event', 'click', { 
-      'event_category': 'purchase_category' ,
-      'event_label':'purchase_label'    
+      'event_category': 'Product' ,
+      'event_label':'purchase'    
     });
 
 
