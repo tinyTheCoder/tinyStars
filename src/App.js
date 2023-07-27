@@ -43,7 +43,7 @@ class App extends Component {
     this.toDetectPlatform()
     console.log('montization track for addToCart')
 
-    console.log('os name',this.state.OSName)
+    // console.log('os name',this.state.OSName)
 
     gtag('set', 'dimension2',{'source': 'web'})
     gtag('set', 'dimension3',{'language': 'english'})
