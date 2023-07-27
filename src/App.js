@@ -16,6 +16,7 @@ class App extends Component {
   componentDidMount(){
     ReactGA.initialize("G-KHQDLL6J28");
     install('G-KHQDLL6J28'); 
+    gtag('config', 'G-KHQDLL6J28',{ 'debug_mode': true });
     // ReactGA.initialize("UA-277395046-1");
   }
 
