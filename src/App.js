@@ -32,7 +32,28 @@ class App extends Component {
         {
           item_id : `${id}`,
           item_name:"my first product - babe",
-          price:106
+          price:106,
+          quantity:1
+        }
+      ]
+    })
+  }
+
+
+  ga4MonitizationTrackPurchase = () =>{
+    console.log('montization track for purchase')
+
+    const id = 1024
+    const dollar_currency = "USD"
+    gtag("event","purchase",{
+      tax:34.85,
+      currency: `${dollar_currency}`,
+      items:[
+        {
+          item_id : `${id}`,
+          item_name:"my first product - babe",
+          price:106,
+          quantity:1
         }
       ]
     })
@@ -57,6 +78,7 @@ class App extends Component {
      return (
       <>
           <h1>Google Alaytics 4</h1>
+          <div className='allButtons'>
           <button onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button>
           {/* <button onClick={()=>toTrackMonitization('addToCart')}>ADD TO CART</button> */}
           <button className='addtocart' onClick={()=>this.ga4MonitizationTrack()}>ADD TO CART</button>
@@ -64,6 +86,10 @@ class App extends Component {
           <button onClick={()=>this.loginEvent()} >LOGIN ME</button>
 
           <button onClick={()=>this.customDimensions()}>Custom dimension</button>
+
+
+          <button className='purchase' onClick={()=>this.ga4MonitizationTrackPurchase()}>PURCHASE</button>
+      </div>
       </>
    
   )
