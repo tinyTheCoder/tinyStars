@@ -122,7 +122,7 @@ class App extends Component {
     gtag('config', 'G-KHQDLL6J28', {
       'user_ID': 'my_user_100'
     });
-    gtag('set', {'user_id': 'my_user_100'});
+    gtag('set', {'user_ID': 'my_user_100'});
     
     gtag('event', 'loginEvent', { 'method': 'Google' });
 
