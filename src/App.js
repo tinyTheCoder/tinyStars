@@ -227,6 +227,29 @@ class App extends Component {
     });
   }  
 
+
+  reportLanguageArabic = ()  =>{
+
+    
+    gtag('event', 'Report language selection', { 
+      // 'event_category': 'Product' ,
+      'event_label':'my first product - babe',
+      'report_language':'ar'    
+    });
+
+  }
+
+  reportLanguageEnglish = ()  =>{
+
+    
+    gtag('event', 'Report language selection', { 
+      // 'event_category': 'Product' ,
+      'event_label':'my first product - babe',
+      'report_language':'en'    
+    });
+
+  }
+
   render(){
      return (
       <>
@@ -249,6 +272,10 @@ class App extends Component {
 
           <button className='removeFromeCart' id='r' onClick={()=>this.removeFromCart()}>REMOVE FROM CART</button>
           <button className='customDimensions' id='c' onClick={()=>this.customDimensions()}>Custom dimension</button>
+      
+      <button onClick={()=>this.reportLanguageArabic()}  className='reportLanguage' >Report Language selection ARABIC</button>
+      <button onClick={()=>this.reportLanguageEnglish()}  className='reportLanguage' >Report Language selection ENGLISH</button>
+
       </div>
       </>
    
