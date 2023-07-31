@@ -126,6 +126,10 @@ class App extends Component {
       'user_ID': 'my_user_100'
     });
 
+    console.log('test me as you wish')
+    const ga = ReactGA.ga 
+    ga('set','test_userid','test me as you wish')
+
 
     this.customDimensions()
     gtag('set', {'user_ID': 'my_user_100'});
