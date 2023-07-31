@@ -38,6 +38,9 @@ class App extends Component {
   customDimensions = () =>{
     let userId = 'm a user'
     gtag('set', 'dimension1', { 'userId': `${userId}` });
+
+    gtag('set', 'dimension2', { 'channel': 'web portal' });
+
     // gtag('set', {'dimension1': 'userId'})
   }
 
@@ -122,6 +125,9 @@ class App extends Component {
     gtag('config', 'G-KHQDLL6J28', {
       'user_ID': 'my_user_100'
     });
+
+
+    this.customDimensions()
     gtag('set', {'user_ID': 'my_user_100'});
     
     gtag('event', 'loginEvent', { 'method': 'Google' });
