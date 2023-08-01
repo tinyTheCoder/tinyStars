@@ -2,6 +2,7 @@ import React,{Component} from 'react'
 // import ReactGA from "react-ga";
 import ReactGA from "react-ga4";
 import { gtag, install } from 'ga-gtag';
+import CustomDimension from './CustomDimension';
 // import toTrackMonitization from './analytics.js'
 
 class App extends Component {
@@ -9,7 +10,8 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      OSName : 'unknown OS '
+      OSName : 'unknown OS ',
+      show:false
     }
   }
 
@@ -36,19 +38,10 @@ class App extends Component {
   }
 
   customDimensions = () =>{
-
-    // G-KHQDLL6J28
-
-    //Call 'set' before config to define mapping
-        gtag('set',
-        {
-          'custom_map':
-            {
-              'dimension1': 'test_cs1'
-            }
-        });
-        // use mapping within 'config' command
-        gtag('config', 'G-KHQDLL6J28', { 'test_cs1': 'some fancy value' });
+console.log('custom dimension clicked')
+this.setState({
+  show:true
+})
   }
 
   ga4MonitizationTrack = () =>{
@@ -270,6 +263,9 @@ class App extends Component {
   render(){
      return (
       <>
+
+      {this.state.show? <CustomDimension/> : <>
+      
           <h1 className='tittle' >Google Alaytics 4</h1>
           <div className='allButtons'>
           {/* <button className='tracking' id='t' onClick={()=>this.eventTrack("Main Page","Track Me Button Event","Button")} >TRACK ME</button> */}
@@ -293,7 +289,9 @@ class App extends Component {
       <button onClick={()=>this.reportLanguageArabic()}  className='reportLanguage' >Report Language selection ARABIC</button>
       <button onClick={()=>this.reportLanguageEnglish()}  className='reportLanguage' >Report Language selection ENGLISH</button>
 
+
       </div>
+      </> }
       </>
    
   )
