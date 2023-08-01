@@ -36,12 +36,19 @@ class App extends Component {
   }
 
   customDimensions = () =>{
-    let userId = 'm a user'
-    gtag('set', 'dimension1', { 'userId': `${userId}` });
 
-    gtag('set', 'dimension2', { 'channel': 'web portal' });
+    // G-KHQDLL6J28
 
-    // gtag('set', {'dimension1': 'userId'})
+    //Call 'set' before config to define mapping
+        gtag('set',
+        {
+          'custom_map':
+            {
+              'dimension1': 'test_cs1'
+            }
+        });
+        // use mapping within 'config' command
+        gtag('config', 'G-KHQDLL6J28', { 'test_cs1': 'some fancy value' });
   }
 
   ga4MonitizationTrack = () =>{
