@@ -6,7 +6,7 @@ class CustomDimension extends Component{
     componentDidMount(){
         install('G-KHQDLL6J28'); 
     }
-    
+
 const 
     fireMe = () =>{
             install('G-KHQDLL6J28'); 
@@ -16,6 +16,10 @@ const
         gtag('config', 'G-KHQDLL6J28', {
           'test_custom_dim': 'english'
         });
+
+        gtag('config', 'G-KHQDLL6J28', {
+            'test_id': 'my_user_100'
+          });
     }
 
 
