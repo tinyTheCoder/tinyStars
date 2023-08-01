@@ -244,6 +244,7 @@ this.setState({
     gtag('event', 'Report language selection', { 
       // 'event_category': 'Product' ,
       'event_label':'my first product - babe',
+      // custom parameter -- mapped custom dimension
       'report_language':'ar'    
     });
 

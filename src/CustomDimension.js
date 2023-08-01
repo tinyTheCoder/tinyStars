@@ -1,25 +1,44 @@
 import React,{Component} from "react";
-import { gtag, install } from 'ga-gtag';
+import ReactGA from 'react-ga4'
+
 
 class CustomDimension extends Component{
+
+    constructor(){
+        super()
+        this.state = {
+            show:false,
+            dob:''
+        }
+    }
 
     componentDidMount(){
         install('G-KHQDLL6J28'); 
     }
 
 const 
-    fireMe = () =>{
-            install('G-KHQDLL6J28'); 
-        console.log('fired')
-        gtag('config', 'G-KHQDLL6J28',{ 'debug_mode': true });
+openDOB = () =>{
+    console.log('m DOB')
+    this.setState({
+        show : true
+    })
+    }
 
-        gtag('config', 'G-KHQDLL6J28', {
-          'test_custom_dim': 'english'
-        });
+    handleChange = (e) =>{
 
-        gtag('config', 'G-KHQDLL6J28', {
-            'test_id': 'my_user_100'
-          });
+        console.log(e.target.name)
+        console.log(e.target.value)
+        this.setState({
+            dob:e.target.value
+        })
+
+    }
+
+    trackEvents = () =>{
+        console.log('GA4 tracking')
+        const ga = ReactGA.ga 
+        yield call
+
     }
 
 
@@ -27,7 +46,16 @@ const
         return(
             <>
             <h1>Custom Dimension</h1>
-            <button onClick={()=>this.fireMe()} >Fire Custom Dimesnion </button>
+            <button onClick={()=>this.openDOB()} >Capture DOB</button>
+            {this.state.show?
+
+            <div>
+                <input name="dob" value={this.state.dob} onChange={(e)=>this.handleChange(e)} />
+                <button onClick={()=>this.trackEvents()} >Submit Form</button>
+
+
+            </div>
+            :null}
             </>
         )
     }
