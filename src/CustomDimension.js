@@ -2,6 +2,7 @@ import React,{Component} from "react";
 import ReactGA from 'react-ga4'
 
 
+
 class CustomDimension extends Component{
 
     constructor(){
@@ -13,7 +14,7 @@ class CustomDimension extends Component{
     }
 
     componentDidMount(){
-        install('G-KHQDLL6J28'); 
+
     }
 
 const 
@@ -34,10 +35,19 @@ openDOB = () =>{
 
     }
 
-    trackEvents = () =>{
+    trackEvents(){
         console.log('GA4 tracking')
-        const ga = ReactGA.ga 
-        yield call
+        ReactGA.event({
+                    category :'Form Submit'   ,
+                    action :'Succcess'  ,
+                    label:'dob form'  ,
+                    login_language:'success login dimension'
+        
+                })
+
+        
+
+
 
     }
 
