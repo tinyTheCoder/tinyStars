@@ -36,12 +36,16 @@ openDOB = () =>{
     }
 
     trackEvents=()=>{
+
+        const data ={
+            login_language:'success login dimension'
+        }
         console.log('GA4 tracking')
         ReactGA.event({
                     category :'Form Submit'   ,
                     action :'Succcess'  ,
                     label:'dob form'  ,
-                    login_language:'success login dimension'
+                    data
         
                 })
 
