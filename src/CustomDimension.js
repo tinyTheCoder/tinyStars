@@ -35,7 +35,7 @@ openDOB = () =>{
 
     }
 
-    trackEvents(){
+    trackEvents=()=>{
         console.log('GA4 tracking')
         ReactGA.event({
                     category :'Form Submit'   ,
